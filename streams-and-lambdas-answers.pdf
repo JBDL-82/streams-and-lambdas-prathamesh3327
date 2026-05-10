@@ -860,7 +860,7 @@ endobj
 << /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Contents 15 0 R /Resources << /Font << /F1 1 0 R >> >> >>
 endobj
 17 0 obj
-<< /Length 591 >>
+<< /Length 738 >>
 stream
 BT
 /F1 10 Tf
@@ -884,6 +884,8 @@ T*
 T*
 (import java.util.Map;) Tj
 T*
+(import java.util.Objects;) Tj
+T*
 (import java.util.stream.Collectors;) Tj
 T*
 () Tj
@@ -893,6 +895,10 @@ T*
 (    public static Map<Character, List<String>> nameInitialMap\(List<String> names\) {) Tj
 T*
 (        return names.stream\(\)) Tj
+T*
+(                .filter\(Objects::nonNull\)) Tj
+T*
+(                .filter\(name -> !name.isEmpty\(\)\)) Tj
 T*
 (                .collect\(Collectors.groupingBy\(name -> name.charAt\(0\)\)\);) Tj
 T*
@@ -932,10 +938,10 @@ xref
 0000011686 00000 n 
 0000013805 00000 n 
 0000013933 00000 n 
-0000014576 00000 n 
-0000014704 00000 n 
+0000014723 00000 n 
+0000014851 00000 n 
 trailer
 << /Size 20 /Root 19 0 R >>
 startxref
-14754
+14901
 %%EOF
