@@ -1,0 +1,941 @@
+%PDF-1.4
+1 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Courier >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [4 0 R 6 0 R 8 0 R 10 0 R 12 0 R 14 0 R 16 0 R 18 0 R] /Count 8 >>
+endobj
+3 0 obj
+<< /Length 1682 >>
+stream
+BT
+/F1 10 Tf
+12 TL
+72 720 Td
+(Q1. Filter Employees by Salary) Tj
+T*
+(Given a list of Employee objects, return all employees whose salary is greater than) Tj
+T*
+(50,000.) Tj
+T*
+() Tj
+T*
+(class Employee {) Tj
+T*
+(    String name;) Tj
+T*
+(    double salary;) Tj
+T*
+(}) Tj
+T*
+() Tj
+T*
+() Tj
+T*
+() Tj
+T*
+(Code:) Tj
+T*
+(import java.util.List;) Tj
+T*
+(import java.util.stream.Collectors;) Tj
+T*
+() Tj
+T*
+(public class Q1FilterEmployeesBySalary {) Tj
+T*
+(    public static class Employee {) Tj
+T*
+(        private final String name;) Tj
+T*
+(        private final double salary;) Tj
+T*
+() Tj
+T*
+(        public Employee\(String name, double salary\) {) Tj
+T*
+(            this.name = name;) Tj
+T*
+(            this.salary = salary;) Tj
+T*
+(        }) Tj
+T*
+() Tj
+T*
+(        public String getName\(\) {) Tj
+T*
+(            return name;) Tj
+T*
+(        }) Tj
+T*
+() Tj
+T*
+(        public double getSalary\(\) {) Tj
+T*
+(            return salary;) Tj
+T*
+(        }) Tj
+T*
+(    }) Tj
+T*
+() Tj
+T*
+(    public static List<Employee> filterBySalary\(List<Employee> employees\) {) Tj
+T*
+(        return employees.stream\(\)) Tj
+T*
+(                .filter\(employee -> employee.getSalary\(\) > 50000\)) Tj
+T*
+(                .collect\(Collectors.toList\(\)\);) Tj
+T*
+(    }) Tj
+T*
+(}) Tj
+T*
+() Tj
+T*
+() Tj
+T*
+(Q2. Word Frequency Counter) Tj
+T*
+(Given a list of words, return a map with the frequency of each word.) Tj
+T*
+() Tj
+T*
+(Input: ["apple", "banana", "apple"]) Tj
+T*
+(Output: {apple=2, banana=1}) Tj
+T*
+() Tj
+T*
+() Tj
+T*
+() Tj
+T*
+(Code:) Tj
+T*
+(import java.util.List;) Tj
+T*
+(import java.util.Map;) Tj
+T*
+(import java.util.function.Function;) Tj
+T*
+(import java.util.stream.Collectors;) Tj
+ET
+endstream
+endobj
+4 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Contents 3 0 R /Resources << /Font << /F1 1 0 R >> >> >>
+endobj
+5 0 obj
+<< /Length 1724 >>
+stream
+BT
+/F1 10 Tf
+12 TL
+72 720 Td
+() Tj
+T*
+(public class Q2WordFrequencyCounter {) Tj
+T*
+(    public static Map<String, Long> wordFrequency\(List<String> words\) {) Tj
+T*
+(        return words.stream\(\)) Tj
+T*
+(                .collect\(Collectors.groupingBy\(Function.identity\(\), Collectors.counting\(\)\)\);) Tj
+T*
+(    }) Tj
+T*
+(}) Tj
+T*
+() Tj
+T*
+() Tj
+T*
+(Q3. Group Employees by Department) Tj
+T*
+(Group a list of employees by their department.) Tj
+T*
+() Tj
+T*
+(class Employee {) Tj
+T*
+(    String name;) Tj
+T*
+(    String department;) Tj
+T*
+(}) Tj
+T*
+() Tj
+T*
+() Tj
+T*
+() Tj
+T*
+(Code:) Tj
+T*
+(import java.util.List;) Tj
+T*
+(import java.util.Map;) Tj
+T*
+(import java.util.stream.Collectors;) Tj
+T*
+() Tj
+T*
+(public class Q3GroupEmployeesByDepartment {) Tj
+T*
+(    public static class Employee {) Tj
+T*
+(        private final String name;) Tj
+T*
+(        private final String department;) Tj
+T*
+() Tj
+T*
+(        public Employee\(String name, String department\) {) Tj
+T*
+(            this.name = name;) Tj
+T*
+(            this.department = department;) Tj
+T*
+(        }) Tj
+T*
+() Tj
+T*
+(        public String getName\(\) {) Tj
+T*
+(            return name;) Tj
+T*
+(        }) Tj
+T*
+() Tj
+T*
+(        public String getDepartment\(\) {) Tj
+T*
+(            return department;) Tj
+T*
+(        }) Tj
+T*
+(    }) Tj
+T*
+() Tj
+T*
+(    public static Map<String, List<Employee>> groupByDepartment\(List<Employee> employees\) {) Tj
+T*
+(        return employees.stream\(\)) Tj
+T*
+(                .collect\(Collectors.groupingBy\(Employee::getDepartment\)\);) Tj
+T*
+(    }) Tj
+T*
+(}) Tj
+T*
+() Tj
+T*
+() Tj
+T*
+(Q4. Employee with Max Salary) Tj
+T*
+(Find the employee with the highest salary from the list.) Tj
+T*
+() Tj
+T*
+() Tj
+T*
+() Tj
+ET
+endstream
+endobj
+6 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Contents 5 0 R /Resources << /Font << /F1 1 0 R >> >> >>
+endobj
+7 0 obj
+<< /Length 1681 >>
+stream
+BT
+/F1 10 Tf
+12 TL
+72 720 Td
+(Code:) Tj
+T*
+(import java.util.Comparator;) Tj
+T*
+(import java.util.List;) Tj
+T*
+(import java.util.Optional;) Tj
+T*
+() Tj
+T*
+(public class Q4EmployeeWithMaxSalary {) Tj
+T*
+(    public static class Employee {) Tj
+T*
+(        private final String name;) Tj
+T*
+(        private final double salary;) Tj
+T*
+() Tj
+T*
+(        public Employee\(String name, double salary\) {) Tj
+T*
+(            this.name = name;) Tj
+T*
+(            this.salary = salary;) Tj
+T*
+(        }) Tj
+T*
+() Tj
+T*
+(        public String getName\(\) {) Tj
+T*
+(            return name;) Tj
+T*
+(        }) Tj
+T*
+() Tj
+T*
+(        public double getSalary\(\) {) Tj
+T*
+(            return salary;) Tj
+T*
+(        }) Tj
+T*
+(    }) Tj
+T*
+() Tj
+T*
+(    public static Optional<Employee> findMaxSalary\(List<Employee> employees\) {) Tj
+T*
+(        return employees.stream\(\)) Tj
+T*
+(                .max\(Comparator.comparingDouble\(Employee::getSalary\)\);) Tj
+T*
+(    }) Tj
+T*
+(}) Tj
+T*
+() Tj
+T*
+() Tj
+T*
+(Q5. Join Strings with Comma) Tj
+T*
+(Join all strings in a list using a comma as a delimiter.) Tj
+T*
+() Tj
+T*
+(Input: ["Java", "Python", "C++"]) Tj
+T*
+(Output: "Java,Python,C++") Tj
+T*
+() Tj
+T*
+() Tj
+T*
+() Tj
+T*
+(Code:) Tj
+T*
+(import java.util.List;) Tj
+T*
+(import java.util.stream.Collectors;) Tj
+T*
+() Tj
+T*
+(public class Q5JoinStringsWithComma {) Tj
+T*
+(    public static String joinWithComma\(List<String> values\) {) Tj
+T*
+(        return values.stream\(\)) Tj
+T*
+(                .collect\(Collectors.joining\(","\)\);) Tj
+T*
+(    }) Tj
+T*
+(}) Tj
+T*
+() Tj
+T*
+() Tj
+T*
+(Q6. Remove Duplicate Elements) Tj
+T*
+(Remove all duplicates from a list of integers.) Tj
+T*
+() Tj
+T*
+() Tj
+ET
+endstream
+endobj
+8 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Contents 7 0 R /Resources << /Font << /F1 1 0 R >> >> >>
+endobj
+9 0 obj
+<< /Length 1770 >>
+stream
+BT
+/F1 10 Tf
+12 TL
+72 720 Td
+() Tj
+T*
+(Code:) Tj
+T*
+(import java.util.List;) Tj
+T*
+(import java.util.stream.Collectors;) Tj
+T*
+() Tj
+T*
+(public class Q6RemoveDuplicateElements {) Tj
+T*
+(    public static List<Integer> removeDuplicates\(List<Integer> numbers\) {) Tj
+T*
+(        return numbers.stream\(\)) Tj
+T*
+(                .distinct\(\)) Tj
+T*
+(                .collect\(Collectors.toList\(\)\);) Tj
+T*
+(    }) Tj
+T*
+(}) Tj
+T*
+() Tj
+T*
+() Tj
+T*
+(Q7. Partition Employees by Experience) Tj
+T*
+(Given a list of employees, partition them into two groups:) Tj
+T*
+(- Experience >= 5 years) Tj
+T*
+(- Experience < 5 years) Tj
+T*
+() Tj
+T*
+(class Employee {) Tj
+T*
+(    String name;) Tj
+T*
+(    int experience;) Tj
+T*
+(}) Tj
+T*
+() Tj
+T*
+() Tj
+T*
+() Tj
+T*
+(Code:) Tj
+T*
+(import java.util.List;) Tj
+T*
+(import java.util.Map;) Tj
+T*
+(import java.util.stream.Collectors;) Tj
+T*
+() Tj
+T*
+(public class Q7PartitionEmployeesByExperience {) Tj
+T*
+(    public static class Employee {) Tj
+T*
+(        private final String name;) Tj
+T*
+(        private final int experience;) Tj
+T*
+() Tj
+T*
+(        public Employee\(String name, int experience\) {) Tj
+T*
+(            this.name = name;) Tj
+T*
+(            this.experience = experience;) Tj
+T*
+(        }) Tj
+T*
+() Tj
+T*
+(        public String getName\(\) {) Tj
+T*
+(            return name;) Tj
+T*
+(        }) Tj
+T*
+() Tj
+T*
+(        public int getExperience\(\) {) Tj
+T*
+(            return experience;) Tj
+T*
+(        }) Tj
+T*
+(    }) Tj
+T*
+() Tj
+T*
+(    public static Map<Boolean, List<Employee>> partitionByExperience\(List<Employee> employees\) {) Tj
+T*
+(        return employees.stream\(\)) Tj
+T*
+(                .collect\(Collectors.partitioningBy\(employee -> employee.getExperience\(\) >= 5\)\);) Tj
+T*
+(    }) Tj
+T*
+(}) Tj
+ET
+endstream
+endobj
+10 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Contents 9 0 R /Resources << /Font << /F1 1 0 R >> >> >>
+endobj
+11 0 obj
+<< /Length 1733 >>
+stream
+BT
+/F1 10 Tf
+12 TL
+72 720 Td
+() Tj
+T*
+() Tj
+T*
+(Q8. Average Salary by Department) Tj
+T*
+(Return a map of department → average salary.) Tj
+T*
+() Tj
+T*
+() Tj
+T*
+() Tj
+T*
+(Code:) Tj
+T*
+(import java.util.List;) Tj
+T*
+(import java.util.Map;) Tj
+T*
+(import java.util.stream.Collectors;) Tj
+T*
+() Tj
+T*
+(public class Q8AverageSalaryByDepartment {) Tj
+T*
+(    public static class Employee {) Tj
+T*
+(        private final String name;) Tj
+T*
+(        private final String department;) Tj
+T*
+(        private final double salary;) Tj
+T*
+() Tj
+T*
+(        public Employee\(String name, String department, double salary\) {) Tj
+T*
+(            this.name = name;) Tj
+T*
+(            this.department = department;) Tj
+T*
+(            this.salary = salary;) Tj
+T*
+(        }) Tj
+T*
+() Tj
+T*
+(        public String getName\(\) {) Tj
+T*
+(            return name;) Tj
+T*
+(        }) Tj
+T*
+() Tj
+T*
+(        public String getDepartment\(\) {) Tj
+T*
+(            return department;) Tj
+T*
+(        }) Tj
+T*
+() Tj
+T*
+(        public double getSalary\(\) {) Tj
+T*
+(            return salary;) Tj
+T*
+(        }) Tj
+T*
+(    }) Tj
+T*
+() Tj
+T*
+(    public static Map<String, Double> averageSalaryByDepartment\(List<Employee> employees\) {) Tj
+T*
+(        return employees.stream\(\)) Tj
+T*
+(                .collect\(Collectors.groupingBy\(Employee::getDepartment, Collectors.averagingDouble\(Employee::getSalary\)\)\);) Tj
+T*
+(    }) Tj
+T*
+(}) Tj
+T*
+() Tj
+T*
+() Tj
+T*
+(Q9. Top 3 Salaries) Tj
+T*
+(Return the names of the top 3 highest-paid employees.) Tj
+T*
+() Tj
+T*
+() Tj
+T*
+() Tj
+T*
+(Code:) Tj
+T*
+(import java.util.Comparator;) Tj
+T*
+(import java.util.List;) Tj
+T*
+(import java.util.stream.Collectors;) Tj
+T*
+() Tj
+T*
+(public class Q9Top3Salaries {) Tj
+ET
+endstream
+endobj
+12 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Contents 11 0 R /Resources << /Font << /F1 1 0 R >> >> >>
+endobj
+13 0 obj
+<< /Length 1840 >>
+stream
+BT
+/F1 10 Tf
+12 TL
+72 720 Td
+(    public static class Employee {) Tj
+T*
+(        private final String name;) Tj
+T*
+(        private final double salary;) Tj
+T*
+() Tj
+T*
+(        public Employee\(String name, double salary\) {) Tj
+T*
+(            this.name = name;) Tj
+T*
+(            this.salary = salary;) Tj
+T*
+(        }) Tj
+T*
+() Tj
+T*
+(        public String getName\(\) {) Tj
+T*
+(            return name;) Tj
+T*
+(        }) Tj
+T*
+() Tj
+T*
+(        public double getSalary\(\) {) Tj
+T*
+(            return salary;) Tj
+T*
+(        }) Tj
+T*
+(    }) Tj
+T*
+() Tj
+T*
+(    public static List<String> top3HighestPaidNames\(List<Employee> employees\) {) Tj
+T*
+(        return employees.stream\(\)) Tj
+T*
+(                .sorted\(Comparator.comparingDouble\(Employee::getSalary\).reversed\(\)\)) Tj
+T*
+(                .limit\(3\)) Tj
+T*
+(                .map\(Employee::getName\)) Tj
+T*
+(                .collect\(Collectors.toList\(\)\);) Tj
+T*
+(    }) Tj
+T*
+(}) Tj
+T*
+() Tj
+T*
+() Tj
+T*
+(Q10. Sort Employees by Salary \(Descending\)) Tj
+T*
+(Return the list of employees sorted by salary in descending order.) Tj
+T*
+() Tj
+T*
+() Tj
+T*
+() Tj
+T*
+(Code:) Tj
+T*
+(import java.util.Comparator;) Tj
+T*
+(import java.util.List;) Tj
+T*
+(import java.util.stream.Collectors;) Tj
+T*
+() Tj
+T*
+(public class Q10SortEmployeesBySalaryDesc {) Tj
+T*
+(    public static class Employee {) Tj
+T*
+(        private final String name;) Tj
+T*
+(        private final double salary;) Tj
+T*
+() Tj
+T*
+(        public Employee\(String name, double salary\) {) Tj
+T*
+(            this.name = name;) Tj
+T*
+(            this.salary = salary;) Tj
+T*
+(        }) Tj
+T*
+() Tj
+T*
+(        public String getName\(\) {) Tj
+T*
+(            return name;) Tj
+T*
+(        }) Tj
+T*
+() Tj
+T*
+(        public double getSalary\(\) {) Tj
+T*
+(            return salary;) Tj
+T*
+(        }) Tj
+ET
+endstream
+endobj
+14 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Contents 13 0 R /Resources << /Font << /F1 1 0 R >> >> >>
+endobj
+15 0 obj
+<< /Length 2066 >>
+stream
+BT
+/F1 10 Tf
+12 TL
+72 720 Td
+(    }) Tj
+T*
+() Tj
+T*
+(    public static List<Employee> sortBySalaryDesc\(List<Employee> employees\) {) Tj
+T*
+(        return employees.stream\(\)) Tj
+T*
+(                .sorted\(Comparator.comparingDouble\(Employee::getSalary\).reversed\(\)\)) Tj
+T*
+(                .collect\(Collectors.toList\(\)\);) Tj
+T*
+(    }) Tj
+T*
+(}) Tj
+T*
+() Tj
+T*
+() Tj
+T*
+(Q11. Departments with No Employees) Tj
+T*
+(Given a list of departments and a list of employees, return the names of departments with) Tj
+T*
+(no employees assigned.) Tj
+T*
+() Tj
+T*
+() Tj
+T*
+() Tj
+T*
+(Code:) Tj
+T*
+(import java.util.List;) Tj
+T*
+(import java.util.Set;) Tj
+T*
+(import java.util.stream.Collectors;) Tj
+T*
+() Tj
+T*
+(public class Q11DepartmentsWithNoEmployees {) Tj
+T*
+(    public static class Employee {) Tj
+T*
+(        private final String name;) Tj
+T*
+(        private final String department;) Tj
+T*
+() Tj
+T*
+(        public Employee\(String name, String department\) {) Tj
+T*
+(            this.name = name;) Tj
+T*
+(            this.department = department;) Tj
+T*
+(        }) Tj
+T*
+() Tj
+T*
+(        public String getName\(\) {) Tj
+T*
+(            return name;) Tj
+T*
+(        }) Tj
+T*
+() Tj
+T*
+(        public String getDepartment\(\) {) Tj
+T*
+(            return department;) Tj
+T*
+(        }) Tj
+T*
+(    }) Tj
+T*
+() Tj
+T*
+(    public static List<String> departmentsWithNoEmployees\(List<String> departments, List<Employee> employees\) {) Tj
+T*
+(        Set<String> assignedDepartments = employees.stream\(\)) Tj
+T*
+(                .map\(Employee::getDepartment\)) Tj
+T*
+(                .collect\(Collectors.toSet\(\)\);) Tj
+T*
+(        return departments.stream\(\)) Tj
+T*
+(                .filter\(department -> !assignedDepartments.contains\(department\)\)) Tj
+T*
+(                .collect\(Collectors.toList\(\)\);) Tj
+T*
+(    }) Tj
+T*
+(}) Tj
+T*
+() Tj
+T*
+() Tj
+T*
+(Q12. Employee Name Initial Map) Tj
+T*
+(Return a map where the key is the first character of employee names, and the value is a) Tj
+T*
+(list of names starting with that character.) Tj
+T*
+() Tj
+ET
+endstream
+endobj
+16 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Contents 15 0 R /Resources << /Font << /F1 1 0 R >> >> >>
+endobj
+17 0 obj
+<< /Length 591 >>
+stream
+BT
+/F1 10 Tf
+12 TL
+72 720 Td
+(Input: ["Alice", "Andrew", "Bob"]) Tj
+T*
+(Output: {A=[Alice, Andrew], B=[Bob]}) Tj
+T*
+() Tj
+T*
+() Tj
+T*
+() Tj
+T*
+() Tj
+T*
+(Code:) Tj
+T*
+(import java.util.List;) Tj
+T*
+(import java.util.Map;) Tj
+T*
+(import java.util.stream.Collectors;) Tj
+T*
+() Tj
+T*
+(public class Q12EmployeeNameInitialMap {) Tj
+T*
+(    public static Map<Character, List<String>> nameInitialMap\(List<String> names\) {) Tj
+T*
+(        return names.stream\(\)) Tj
+T*
+(                .collect\(Collectors.groupingBy\(name -> name.charAt\(0\)\)\);) Tj
+T*
+(    }) Tj
+T*
+(}) Tj
+T*
+() Tj
+T*
+() Tj
+ET
+endstream
+endobj
+18 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Contents 17 0 R /Resources << /Font << /F1 1 0 R >> >> >>
+endobj
+19 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+xref
+0 20
+0000000000 65535 f 
+0000000009 00000 n 
+0000000077 00000 n 
+0000000181 00000 n 
+0000001915 00000 n 
+0000002041 00000 n 
+0000003817 00000 n 
+0000003943 00000 n 
+0000005676 00000 n 
+0000005802 00000 n 
+0000007624 00000 n 
+0000007751 00000 n 
+0000009537 00000 n 
+0000009665 00000 n 
+0000011558 00000 n 
+0000011686 00000 n 
+0000013805 00000 n 
+0000013933 00000 n 
+0000014576 00000 n 
+0000014704 00000 n 
+trailer
+<< /Size 20 /Root 19 0 R >>
+startxref
+14754
+%%EOF
